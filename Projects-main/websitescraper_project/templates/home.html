@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scraping</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+
+<! To input data for form --website code-------------------------------->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <br>
+            <form method="POST" action="/">
+                {% csrf_token %}
+
+                <div class="col-md-8">
+                    <input type="text" class="form-control" name="page" placeholder="Enter link">
+                </div>
+
+                <br>
+
+                <div class="col-md-2">
+                    <button class="btn btn-primary" type="submit">Sumbit</button>
+                    <input type="reset" value="clear"  style="background-color : orange;">
+                </div>
+
+                <br>
+                <br>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<! code for table-------------------------------------------------------->
+
+<div class="container fluid">
+    <div class="row">
+        <div class="col-md-4">
+
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">link</th>
+                    </tr>
+                </thead>
+
+                {% for i in data_values %}
+
+                <tbody>
+                    <tr>
+                        <td>{{i.id}}</td>
+                        <td>{{i.stringname}}</td>
+                        <td>{{i.address}}</td>
+                    </tr>
+                </tbody>
+
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

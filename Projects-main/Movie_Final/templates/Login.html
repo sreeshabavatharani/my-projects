@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<! message printing ------------------------------------------>
+    {% for msg in messages %}
+        <h2 style="text-align : center; color : red;">{{msg}}</h2>
+    {% endfor %}
+
+<! Login code -------------------------------------------------->
+
+    <h1 style="text-align : center;">Enter Username and Password</h1>
+
+    <div class="form_add">
+        <form method="POST" action="{% url 'movieapp:login' %}">
+            {% csrf_token %}
+            <label>Useranme</label>
+            <input type="text" name="l_name" placeholder="Enter User name"><br>
+
+            <label>Password</label>
+            <input type="password" name="l_password" placeholder="Password"><br><br>
+
+            <input type="submit" >
+
+        </form>
+    </div>
+
+
+{% endblock %}

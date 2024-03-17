@@ -1,0 +1,14 @@
+
+/*** Form add ***/
+.form_add{
+margin: 0 auto;
+width: 150px;
+}
+
+.form label{
+display: inline-block;
+text-align: right;
+float: left;
+font-weight: 500;
+}
+

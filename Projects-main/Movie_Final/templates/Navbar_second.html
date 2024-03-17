@@ -1,0 +1,20 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" style="margin-bottom : 25px; margin-top : 25px;">
+      <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand">User Zone</a>
+        <a style="text-align : right;" href="{% url 'movieapp:home' %}" class="btn btn-primary">Movie Zone</a>
+        <a style="text-align : right;" href="{% url 'movieapp:add_movie' %}" class="btn btn-primary">Create Post+</a>
+        <a  style="text-align : right;" href="{% url 'movieapp:home_second' %}" class="btn btn-primary">User Home</a>
+        <a  style="text-align : right;" href="{% url 'movieapp:logout' %}" class="btn btn-danger">logout</a>
+
+        <form class="form-inline" method="GET" action="{% url 'searchapp:search_user' %}">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" name="q" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </nav>
+    </div>
+  </div>
+</div>

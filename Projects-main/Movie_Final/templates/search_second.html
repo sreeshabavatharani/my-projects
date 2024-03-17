@@ -1,0 +1,35 @@
+{% extends 'base_second.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div>
+        <p class="text-center my_search_text">You have searched for <b>{{query}}</b></p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for i in movies %}
+                <div class="col-md-4">
+                    <div class="card" style="margin-top: 25px; margin-bottom: 20px;">
+                        <img class="card-img-top" src="{{i.poster.url}}" alt="Card image cap" height="250">
+                        <div class="card-body" style="align-item : stretch;">
+                            <h5 class="card-title">{{i.name}}</h5>
+                            <p class="card-text" style="height : 150px">{{i.desc}}</p>
+                            <p class="card-text" style="height : 50px">{{i.actors}}</p>
+                            <p class="card-text">{{i.release_date}}</p>
+                            <a href="{{i.youtube_link}}" class="btn btn-primary">Trailer</a><br>
+                            <a class="btn btn-warning" style="margin-top : 10px;" href="{% url 'movieapp:update' i.id %}">Update</a>
+                            <a class="btn btn-danger" style="margin-top : 10px;" href="{% url 'movieapp:delete' i.id %}">Delete</a>
+                        </div>
+                    </div>
+                </div>
+
+            {% empty %}
+            <div>
+                <p class="text-center my_search_text">0 result Found</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

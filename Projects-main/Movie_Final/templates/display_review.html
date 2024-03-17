@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<! code to display movies name as card---------------------------------------------->
+
+
+    <div class="container">
+        {% for i in Movie_list_review %}
+        <div class="cotainer" style="margin-top :10px; margin-bottom : 10px;">
+            <h4>Review: </h4><h5>{{i.content}}</h5> <br>
+            <h4>Rating: </h4><h5>{{i.rating}}</h5><br>
+            <h5>-------------------------------------------------</h5>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+    <h1 style="text-align : center;">Enter Movie Review and Rating</h1>
+
+    <div class="form_add">
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <label>Review</label>
+            <input type="text" name="review" placeholder="Enter Movie's review" required maxlength="550"><br><br>
+
+            <label>Rating</label>
+            <input type="number" name="rating" min="0" max="10"  step="1.0" required><br><br>
+
+            <input type="submit" >
+        </form>
+    </div>
+
+{% endblock %}
